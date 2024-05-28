@@ -1,0 +1,135 @@
+Backend: Vivado
+ClockPeriod: 5
+HLSConfig:
+  LayerName:
+    bn_dense_0:
+      Precision:
+        bias: fixed<16,6>
+        result: fixed<16,6>
+        scale: fixed<16,6>
+      Trace: false
+    bn_dense_1:
+      Precision:
+        bias: fixed<16,6>
+        result: fixed<16,6>
+        scale: fixed<16,6>
+      Trace: false
+    conv_act_0:
+      Precision:
+        result: ufixed<6,0,RND_CONV,SAT>
+      Trace: false
+    conv_act_1:
+      Precision:
+        result: ufixed<6,0,RND_CONV,SAT>
+      Trace: false
+    conv_act_2:
+      Precision:
+        result: ufixed<6,0,RND_CONV,SAT>
+      Trace: false
+    dense_0:
+      Precision:
+        bias: fixed<16,6>
+        result: fixed<16,6>
+        weight: fixed<6,1>
+      Trace: false
+    dense_0_linear:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    dense_1:
+      Precision:
+        bias: fixed<16,6>
+        result: fixed<16,6>
+        weight: fixed<6,1>
+      Trace: false
+    dense_1_linear:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    dense_act_0:
+      Precision:
+        result: ufixed<6,0,RND_CONV,SAT>
+      Trace: false
+    dense_act_1:
+      Precision:
+        result: ufixed<6,0,RND_CONV,SAT>
+      Trace: false
+    flatten_4:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    fused_convbn_0:
+      Precision:
+        bias: fixed<6,1>
+        result: fixed<16,6>
+        weight: fixed<6,1>
+      Trace: false
+    fused_convbn_0_linear:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    fused_convbn_1:
+      Precision:
+        bias: fixed<6,1>
+        result: fixed<16,6>
+        weight: fixed<6,1>
+      Trace: false
+    fused_convbn_1_linear:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    fused_convbn_2:
+      Precision:
+        bias: fixed<6,1>
+        result: fixed<16,6>
+        weight: fixed<6,1>
+      Trace: false
+    fused_convbn_2_linear:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    input_5:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    output_dense:
+      Precision:
+        bias: fixed<16,6>
+        result: fixed<16,6>
+        weight: fixed<16,6>
+      Trace: false
+    output_dense_linear:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    output_softmax:
+      Precision:
+        result: fixed<16,6>
+      Strategy: Stable
+      Trace: false
+    pool_0:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    pool_1:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    pool_2:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+  Model:
+    BramFactor: 1000000000
+    Precision: fixed<16,6>
+    ReuseFactor: 1
+    Strategy: Latency
+    TraceOutput: false
+IOType: io_stream
+KerasModel: !keras_model 'quantized_pruned_cnn//keras_model.h5'
+OutputDir: quantized_pruned_cnn/
+Part: xcvu13p-flga2577-2-e
+ProjectName: myproject
+Stamp: a2bD0956
+Version: 1.0.0
+XilinxPart: xcu250-figd2104-2L-e
