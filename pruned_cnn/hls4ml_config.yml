@@ -203,6 +203,6 @@ KerasModel: !keras_model 'pruned_cnn//keras_model.h5'
 OutputDir: pruned_cnn/
 Part: xcvu13p-flga2577-2-e
 ProjectName: myproject
-Stamp: Fbc7d50B
+Stamp: Eeef7b9b
 Version: 1.0.0
 XilinxPart: xcu250-figd2104-2L-e

@@ -54,7 +54,7 @@ HLSConfig:
       Precision:
         result: ufixed<6,0,RND_CONV,SAT>
       Trace: false
-    flatten_4:
+    flatten_1:
       Precision:
         result: fixed<16,6>
       Trace: false
@@ -88,7 +88,7 @@ HLSConfig:
       Precision:
         result: fixed<16,6>
       Trace: false
-    input_5:
+    input_2:
       Precision:
         result: fixed<16,6>
       Trace: false
@@ -130,6 +130,6 @@ KerasModel: !keras_model 'quantized_pruned_cnn//keras_model.h5'
 OutputDir: quantized_pruned_cnn/
 Part: xcvu13p-flga2577-2-e
 ProjectName: myproject
-Stamp: a2bD0956
+Stamp: 101B43b2
 Version: 1.0.0
 XilinxPart: xcu250-figd2104-2L-e

@@ -4,12 +4,12 @@
 #include "parameters.h"
 
 void myproject(
-    hls::stream<input_t> &input_5,
+    hls::stream<input_t> &input_2,
     hls::stream<result_t> &layer25_out
 ) {
 
     // hls-fpga-machine-learning insert IO
-    #pragma HLS INTERFACE axis port=input_5,layer25_out 
+    #pragma HLS INTERFACE axis port=input_2,layer25_out 
     #pragma HLS DATAFLOW 
 
 #ifndef __SYNTHESIS__
@@ -44,7 +44,7 @@ void myproject(
 
     hls::stream<layer2_t> layer2_out("layer2_out");
     #pragma HLS STREAM variable=layer2_out depth=900
-    nnet::conv_2d_cl<input_t, layer2_t, config2>(input_5, layer2_out, w2, b2); // fused_convbn_0
+    nnet::conv_2d_cl<input_t, layer2_t, config2>(input_2, layer2_out, w2, b2); // fused_convbn_0
 
     hls::stream<layer4_t> layer4_out("layer4_out");
     #pragma HLS STREAM variable=layer4_out depth=900

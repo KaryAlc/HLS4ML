@@ -58,12 +58,12 @@ int main(int argc, char **argv) {
             }
 
             // hls-fpga-machine-learning insert data
-      hls::stream<input_t> input_5("input_5");
-      nnet::copy_data<float, input_t, 0, N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1>(in, input_5);
+      hls::stream<input_t> input_2("input_2");
+      nnet::copy_data<float, input_t, 0, N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1>(in, input_2);
       hls::stream<result_t> layer25_out("layer25_out");
 
             // hls-fpga-machine-learning insert top-level-function
-            myproject(input_5,layer25_out);
+            myproject(input_2,layer25_out);
 
             if (e % CHECKPOINT == 0) {
                 std::cout << "Predictions" << std::endl;
@@ -87,12 +87,12 @@ int main(int argc, char **argv) {
         std::cout << "INFO: Unable to open input/predictions file, using default input." << std::endl;
 
         // hls-fpga-machine-learning insert zero
-    hls::stream<input_t> input_5("input_5");
-    nnet::fill_zero<input_t, N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1>(input_5);
+    hls::stream<input_t> input_2("input_2");
+    nnet::fill_zero<input_t, N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1>(input_2);
     hls::stream<result_t> layer25_out("layer25_out");
 
         // hls-fpga-machine-learning insert top-level-function
-        myproject(input_5,layer25_out);
+        myproject(input_2,layer25_out);
 
         // hls-fpga-machine-learning insert output
         nnet::print_result<result_t, N_LAYER_23>(layer25_out, std::cout, true);
